@@ -13,7 +13,7 @@ import {
 } from '@nestjs/websockets'
 import { NestGateway } from '@nestjs/websockets/interfaces/nest-gateway.interface'
 import { Queue } from 'bull'
-import { classToClass } from 'class-transformer'
+import { instanceToInstance as classToClass } from 'class-transformer'
 import * as dayjs from 'dayjs'
 import { Server } from 'socket.io'
 import { Brackets, Not, Repository } from 'typeorm'

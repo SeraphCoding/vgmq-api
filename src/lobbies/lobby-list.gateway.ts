@@ -1,6 +1,6 @@
 import { UseFilters, UseGuards } from '@nestjs/common'
 import { WebSocketGateway, WebSocketServer } from '@nestjs/websockets'
-import { classToClass } from 'class-transformer'
+import { instanceToInstance as classToClass } from 'class-transformer'
 import { Server } from 'socket.io'
 
 import { WsNotFoundExceptionFilter } from '../auth/exception-filter/ws-not-found.exception-filter'

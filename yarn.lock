@@ -5358,10 +5358,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"class-transformer@npm:^0.4.0":
-  version: 0.4.1
-  resolution: "class-transformer@npm:0.4.1"
-  checksum: 10c0/bddaa1bda63ef21c4160f9b19bd20c0e360d270c24650a8f90569f8ce9fb6e37dea59bb43e184328676bef4f9dd0885d2e5a523db2c06a2282d31c70b8264f55
+"class-transformer@npm:0.5.1":
+  version: 0.5.1
+  resolution: "class-transformer@npm:0.5.1"
+  checksum: 10c0/19809914e51c6db42c036166839906420bb60367df14e15f49c45c8c1231bf25ae661ebe94736ee29cc688b77101ef851a8acca299375cc52fc141b64acde18a
   languageName: node
   linkType: hard
 
@@ -15202,7 +15202,7 @@ __metadata:
     bull: "npm:^3.29.3"
     cache-manager: "npm:^3.6.0"
     check-disk-space: "npm:^3.3.0"
-    class-transformer: "npm:^0.4.0"
+    class-transformer: "npm:0.5.1"
     class-validator: "npm:^0.14.0"
     cookie-parser: "npm:^1.4.5"
     dayjs: "npm:^1.11.2"
