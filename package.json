@@ -5,6 +5,10 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "engines": {
+    "node": "^18.19.1 || ^20.11.1",
+    "npm": "Please use yarn instead of NPM to install dependencies - if you have node installed run 'corepack enable' and then 'yarn'"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -46,7 +50,7 @@
     "@nestjs/typeorm": "^10.0.2",
     "@nestjs/websockets": "^10.3.10",
     "@socket.io/redis-adapter": "^8.2.1",
-    "axios": "1.6.7",
+    "axios": "1.7.7",
     "bcrypt": "^5.0.1",
     "bull": "^3.29.3",
     "cache-manager": "^3.6.0",
@@ -86,6 +90,7 @@
     "@types/cookie-parser": "^1.4.2",
     "@types/express": "^4.17.11",
     "@types/inline-css": "^3.0.1",
+    "@types/ioredis": "^5.0.0",
     "@types/jest": "^26.0.20",
     "@types/luxon": "^3.2.0",
     "@types/mime-types": "^2.1.4",
@@ -128,5 +133,6 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "packageManager": "yarn@4.5.1"
 }
