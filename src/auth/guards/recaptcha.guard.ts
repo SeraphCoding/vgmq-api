@@ -11,6 +11,7 @@ export class RecaptchaGuard implements CanActivate {
         return this.httpService
             .post<{ success: boolean }>(
                 `https://www.google.com/recaptcha/api/siteverify?response=${body.recaptcha}&secret=${process.env.RECAPTCHA_SECRET_KEY}`,
+                {}, // Doesn't take any data in the body
             )
             .pipe(
                 map((res) => {
