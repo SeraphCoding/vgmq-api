@@ -3,7 +3,7 @@ import 'reflect-metadata'
 import { ConfigService } from '@nestjs/config'
 import { NestFactory } from '@nestjs/core'
 import { useContainer } from 'class-validator'
-import * as cookieParser from 'cookie-parser'
+import { default as cookieParser } from 'cookie-parser'
 
 import { AppModule } from './app.module'
 import { exceptionPipe } from './exception.pipe'

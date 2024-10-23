@@ -17,7 +17,7 @@ import { ConfigService } from '@nestjs/config'
 import { FilesInterceptor } from '@nestjs/platform-express'
 import { InjectRepository } from '@nestjs/typeorm'
 import checkDiskSpace from 'check-disk-space'
-import * as dayjs from 'dayjs'
+import { default as dayjs } from 'dayjs'
 import { Request } from 'express'
 import { IsNull, Repository } from 'typeorm'
 

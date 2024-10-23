@@ -15,7 +15,7 @@ import { Logger } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Job, Queue } from 'bull'
-import * as dayjs from 'dayjs'
+import { default as dayjs } from 'dayjs'
 import { Exception } from 'handlebars'
 import { In, Not, Repository } from 'typeorm'
 
@@ -206,7 +206,7 @@ export class LobbyProcessor {
         this.logger.debug(`bufferMusic for ${lobby.code} could be stuck`)
         void new Promise((resolve, reject) => {
             void ffmpegProcess.on('close', (code) => {
-                this.lobbyGateway.sendLobbyBufferEnd(lobby!)
+                this.lobbyGateway.sendLobbyBufferEnd(lobby)
                 if (code === 0) {
                     void this.lobbyUserRepository
                         .save(
@@ -217,28 +217,26 @@ export class LobbyProcessor {
                         )
                         .then((lbs) => {
                             void this.lobbyGateway
-                                .sendLobbyUsers(lobby!, this.lobbyUserRepository.create(lbs))
+                                .sendLobbyUsers(lobby, this.lobbyUserRepository.create(lbs))
                                 .then(() => {
                                     this.lobbyGateway.sendLobbyMusicToLoad(
-                                        lobby!,
+                                        lobby,
                                         Buffer.concat(output),
                                     )
                                 })
                         })
-                    this.logger.debug(`nevermind! bufferMusic for ${lobby!.code} resolved`)
+                    this.logger.debug(`nevermind! bufferMusic for ${lobby.code} resolved`)
                     resolve(null)
                 } else {
                     this.logger.debug(
-                        `nevermind! bufferMusic for ${
-                            lobby!.code
-                        } rejected, but could still be stuck`,
+                        `nevermind! bufferMusic for ${lobby.code} rejected, but could still be stuck`,
                     )
                     reject('the server could not encode the music')
                 }
             })
         }).catch(async (err: string) => {
-            this.lobbyGateway.sendLobbyError(lobby!, err)
-            this.logger.debug(`bufferMusic for ${lobby!.code}: catch ffmpeg error part 1/3`)
+            this.lobbyGateway.sendLobbyError(lobby, err)
+            this.logger.debug(`bufferMusic for ${lobby.code}: catch ffmpeg error part 1/3`)
             lobbyUsers = this.lobbyUserRepository.create(
                 await this.lobbyUserRepository.save(
                     lobbyUsers.map((lobbyUser) => ({
@@ -247,9 +245,9 @@ export class LobbyProcessor {
                     })),
                 ),
             )
-            this.logger.debug(`bufferMusic for ${lobby!.code}: catch ffmpeg error part 2/3`)
-            await this.lobbyGateway.sendLobbyUsers(lobby!, lobbyUsers)
-            this.logger.debug(`bufferMusic for ${lobby!.code}: catch ffmpeg error part 3/3`)
+            this.logger.debug(`bufferMusic for ${lobby.code}: catch ffmpeg error part 2/3`)
+            await this.lobbyGateway.sendLobbyUsers(lobby, lobbyUsers)
+            this.logger.debug(`bufferMusic for ${lobby.code}: catch ffmpeg error part 3/3`)
         })
         this.logger.debug(`bufferMusic for ${lobby.code} fully unstuck!`)
     }
@@ -374,7 +372,7 @@ export class LobbyProcessor {
                     playedTheGame: null,
                     tries: 0,
                     ...(lobbyUser.status === LobbyUserStatus.ReadyToPlayMusic && { status: null }),
-                    hintMode: lobby!.hintMode === LobbyHintMode.Always || lobbyUser.keepHintMode, // why do I have to use '!' here ??
+                    hintMode: lobby.hintMode === LobbyHintMode.Always || lobbyUser.keepHintMode, // why do I have to use '!' here ??
                     answer: null,
                 })),
             ),

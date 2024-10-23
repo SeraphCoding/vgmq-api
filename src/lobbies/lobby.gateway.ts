@@ -14,7 +14,7 @@ import {
 import { NestGateway } from '@nestjs/websockets/interfaces/nest-gateway.interface'
 import { Queue } from 'bull'
 import { instanceToInstance as classToClass } from 'class-transformer'
-import * as dayjs from 'dayjs'
+import { default as dayjs } from 'dayjs'
 import { Server } from 'socket.io'
 import { Brackets, Not, Repository } from 'typeorm'
 

@@ -5358,7 +5358,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"class-transformer@npm:0.5.1":
+"class-transformer@npm:^0.5.1":
   version: 0.5.1
   resolution: "class-transformer@npm:0.5.1"
   checksum: 10c0/19809914e51c6db42c036166839906420bb60367df14e15f49c45c8c1231bf25ae661ebe94736ee29cc688b77101ef851a8acca299375cc52fc141b64acde18a
@@ -5959,7 +5959,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.11.2, dayjs@npm:^1.11.9, dayjs@npm:~1.11.5":
+"dayjs@npm:^1.11.13, dayjs@npm:^1.11.9, dayjs@npm:~1.11.5":
   version: 1.11.13
   resolution: "dayjs@npm:1.11.13"
   checksum: 10c0/a3caf6ac8363c7dade9d1ee797848ddcf25c1ace68d9fe8678ecf8ba0675825430de5d793672ec87b24a69bf04a1544b176547b2539982275d5542a7955f35b7
@@ -14820,13 +14820,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.1.5":
-  version: 4.9.5
-  resolution: "typescript@npm:4.9.5"
+"typescript@npm:^5.6.3":
+  version: 5.6.3
+  resolution: "typescript@npm:5.6.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/5f6cad2e728a8a063521328e612d7876e12f0d8a8390d3b3aaa452a6a65e24e9ac8ea22beb72a924fd96ea0a49ea63bb4e251fb922b12eedfb7f7a26475e5c56
+  checksum: 10c0/44f61d3fb15c35359bc60399cb8127c30bae554cd555b8e2b46d68fa79d680354b83320ad419ff1b81a0bdf324197b29affe6cc28988cd6a74d4ac60c94f9799
   languageName: node
   linkType: hard
 
@@ -14840,13 +14840,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^4.1.5#optional!builtin<compat/typescript>":
-  version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"
+"typescript@patch:typescript@npm%3A^5.6.3#optional!builtin<compat/typescript>":
+  version: 5.6.3
+  resolution: "typescript@patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/e3333f887c6829dfe0ab6c1dbe0dd1e3e2aeb56c66460cb85c5440c566f900c833d370ca34eb47558c0c69e78ced4bfe09b8f4f98b6de7afed9b84b8d1dd06a1
+  checksum: 10c0/7c9d2e07c81226d60435939618c91ec2ff0b75fbfa106eec3430f0fcf93a584bc6c73176676f532d78c3594fe28a54b36eb40b3d75593071a7ec91301533ace7
   languageName: node
   linkType: hard
 
@@ -15202,10 +15202,10 @@ __metadata:
     bull: "npm:^3.29.3"
     cache-manager: "npm:^3.6.0"
     check-disk-space: "npm:^3.3.0"
-    class-transformer: "npm:0.5.1"
+    class-transformer: "npm:^0.5.1"
     class-validator: "npm:^0.14.0"
     cookie-parser: "npm:^1.4.5"
-    dayjs: "npm:^1.11.2"
+    dayjs: "npm:^1.11.13"
     dotenv: "npm:^16.0.0"
     eslint: "npm:^8.22.0"
     eslint-config-prettier: "npm:^8.5.0"
@@ -15239,7 +15239,7 @@ __metadata:
     tsconfig-paths: "npm:^3.9.0"
     typedi: "npm:^0.10.0"
     typeorm: "npm:^0.3.20"
-    typescript: "npm:^4.1.5"
+    typescript: "npm:^5.6.3"
   languageName: unknown
   linkType: soft
 
